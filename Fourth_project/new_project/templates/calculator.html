@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Calculator</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="value">value1</label>
+        <input type="text" name="num1" value='{{n1}}' class="form-control">
+        <label for="opr">Selecet Operator</label>
+        <select name="opr" id="" class="form-control">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <label for="value">value2</label>
+        <input type="text" name="num2" value="{{n2}}" class="form-control">
+
+        <button type="submit">Calculate</button>
+        <br>
+        <label for="output">Output</label>
+        <input type="text" name="output" value="{{c}}" class="form-control">
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        .main{
+            width: 1000px;
+            padding:20px;
+            color:white;
+            background-color: black;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main">Welcome Home Buddy</div>
+    <h1>{{title}}</h1>
+    <h1>{{bdata}}</h1>
+    <h1>{{'new'}}</h1>
+
+    {% for n in clist %}
+    <div>{{forloop.counter}} {{n}}</div>
+    {%endfor%}
+
+    <table border="1"cellpadding='10'>
+
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+        </tr>
+
+        <!-- for loop for nested dictionary -->
+        {% for d in student_details %}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.mobile}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% if numbers|length > 0 %}
+        {% for n in numbers%}
+        {% if n > 20 %}
+        <div>
+            {{n}}
+        </div>
+        {% endif %}
+        {% endfor %}
+    {% else %}
+        No Data found in the list
+    {%endif%}
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    
+    <form action="" method="POST">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            Please fill the fields
+        </div>
+        {%endif%}
+
+        {% csrf_token %}
+
+
+        <label for="value1">
+            Enter Value
+        </label>
+
+        <input type="text" name='num1' value='{{n1}}' class="form-control">
+
+        <button type="submit">Even/Odd</button>
+        <br>
+
+        <label for="output">Output</label>
+        <br>
+        <input type="text" name='output' value="{{c}}">
+    </form>
+
+</body>
+</html>
